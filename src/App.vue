@@ -1,9 +1,13 @@
 <template>
-  <h1>Hello i am just some text on the screen</h1>
+  <MainNav>What we need indeed</MainNav>
 </template>
 
 <script>
+import MainNav from "@/components/MainNav.vue";
 export default {
   name: "App",
+  components: {
+    MainNav,
+  },
 };
 </script>
