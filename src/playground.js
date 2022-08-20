@@ -1,6 +1,3 @@
-const fruits = ["Apple", "Banana", "Orange"];
-const vegetables = ["Cucumber", "Radish"];
-
-// const all = fruits.concat(vegetables);
-
-console.log([...fruits, ...vegetables]);
+export const evenOrOdd = (number) => {
+  return number % 2 === 0 ? "Even" : "Odd";
+};
