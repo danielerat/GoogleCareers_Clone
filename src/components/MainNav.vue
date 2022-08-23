@@ -7,9 +7,6 @@
         <a href="/" class="flex items-center px-4 h-full text-xl">
           {{ company }}
         </a>
-        <h2 class="flex items-center h-full ml-10">
-          {{ author.firstName }} {{ author.lastName }}
-        </h2>
       </div>
     </div>
   </header>
