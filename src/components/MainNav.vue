@@ -12,7 +12,7 @@
             <li
               v-for="item in menuItems"
               :key="item"
-              class="flex border h-full border-orange-600 ml-9"
+              class="flex border h-full border-orange-600 ml-9 first:ml-0"
             >
               <a href="" class="flex items-center border">{{ item }}</a>
             </li>
