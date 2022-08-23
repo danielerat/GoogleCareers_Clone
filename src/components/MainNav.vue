@@ -7,14 +7,15 @@
         <a :href="url" class="flex items-center px-4 h-full text-xl">
           {{ company }}
         </a>
-        <nav class="h-full border ml-12">
+        <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0">
             <li
               v-for="item in menuItems"
               :key="item"
-              class="flex border h-full border-orange-600 ml-9 first:ml-0"
+              class="flex h-full ml-9 first:ml-0"
+              data-test="main-nav-list-item"
             >
-              <a href="" class="flex items-center border">{{ item }}</a>
+              <a href="" class="flex items-center">{{ item }}</a>
             </li>
           </ul>
         </nav>
