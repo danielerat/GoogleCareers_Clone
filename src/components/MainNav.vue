@@ -19,18 +19,29 @@
             </li>
           </ul>
         </nav>
+        <div class="flex items-center h-full ml-auto">
+          <action-button v-if="!isLoggedIn" />
+          <profile-image v-else />
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import ActionButton from "@/components/ActionButton.vue";
+import ProfileImage from "@/components/ProfileImage.vue";
 export default {
   name: "MainNav",
+  components: {
+    ActionButton,
+    ProfileImage,
+  },
   data() {
     return {
       company: "Careers Junkie",
       author: { firstName: "Ilunga", lastName: "Gisa Daniel" },
+      url: "#",
       menuItems: [
         "Team",
         "Locations",
@@ -39,7 +50,7 @@ export default {
         "Student",
         "Jos",
       ],
-      url: "http://www.careersjobs.com",
+      isLoggedIn: false,
     };
   },
 };
