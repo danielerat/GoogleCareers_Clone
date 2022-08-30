@@ -27,33 +27,22 @@ describe("MainNav", () => {
 
   describe("When the user is logged out", () => {
     it("Prompts user to sign in", () => {
-      const wrapper = mount(MainNav, {
-        data() {
-          return {
-            isLoggedIn: false,
-          };
-        },
-      });
+      const wrapper = mount(MainNav);
       const loginButton = wrapper.find("[data-test='login-button']");
-      const profileImage = wrapper.findComponent("[data-test='profile-image']");
       expect(loginButton.exists()).toBe(true);
-      expect(profileImage.exists()).toBe(false);
     });
   });
 
   describe("When the user is logged in", () => {
-    it("Display User Profile image", () => {
-      const wrapper = mount(MainNav, {
-        data() {
-          return {
-            isLoggedIn: true,
-          };
-        },
-      });
+    it("Display User Profile image", async () => {
+      const wrapper = mount(MainNav);
+      let profileImage = wrapper.findComponent("[data-test='profile-image']");
+      expect(profileImage.exists()).toBe(false);
+
       const loginButton = wrapper.find("[data-test='login-button']");
-      const profileImage = wrapper.findComponent("[data-test='profile-image']");
+      await loginButton.trigger("click");
+      profileImage = wrapper.findComponent("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(true);
-      expect(loginButton.exists()).toBe(false);
     });
   });
 });
