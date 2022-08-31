@@ -36,13 +36,25 @@ describe("MainNav", () => {
   describe("When the user is logged in", () => {
     it("Display User Profile image", async () => {
       const wrapper = shallowMount(MainNav);
-      let profileImage = wrapper.findComponent("[data-test='profile-image']");
+      let profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(false);
 
       const loginButton = wrapper.find("[data-test='login-button']");
       await loginButton.trigger("click");
-      profileImage = wrapper.findComponent("[data-test='profile-image']");
+      profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(true);
+    });
+
+    it("Displays subnavigation with addditional information", async () => {
+      const wrapper = shallowMount(MainNav);
+      let subnav = wrapper.find("[data-test='subnav']");
+      expect(subnav.exists()).toBe(false);
+
+      const loginButton = wrapper.find("[data-test='login-button']");
+      await loginButton.trigger("click");
+
+      subnav = wrapper.find("[data-test='subnav']");
+      expect(subnav.exists()).toBe(true);
     });
   });
 });
