@@ -1,5 +1,5 @@
 <template>
-  <MainNav>What we need indeed</MainNav>
+  <MainNav />
 </template>
 
 <script>
