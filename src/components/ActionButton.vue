@@ -1,5 +1,5 @@
 <template>
-  <button class="primary">
+  <button :class="buttonClass">
     {{ text }}
   </button>
 </template>
@@ -8,6 +8,16 @@
 export default {
   name: "ActionButton",
   props: ["text"],
+  data() {
+    return {
+      primary: true, //Independedn property that defines whether some properties should or should not be applied
+    };
+  },
+  computed: {
+    buttonClass() {
+      return { primary: this.primary }; //COmputed property that return an object
+    },
+  },
 };
 </script>
 <style scoped>
