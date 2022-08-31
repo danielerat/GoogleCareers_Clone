@@ -31,7 +31,7 @@
       </div>
 
       <!-- Adding Our subNavigation -->
-      <Subnav />
+      <Subnav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
