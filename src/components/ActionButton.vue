@@ -7,15 +7,14 @@
 <script>
 export default {
   name: "ActionButton",
-  props: ["text"],
-  data() {
-    return {
-      primary: true, //Independedn property that defines whether some properties should or should not be applied
-    };
-  },
+  props: ["text", "type"],
+
   computed: {
     buttonClass() {
-      return { primary: this.primary }; //COmputed property that return an object
+      return {
+        primary: this.type == "primary",
+        secondary: this.type == "secondary",
+      };
     },
   },
 };
@@ -26,5 +25,8 @@ button {
 }
 .primary {
   @apply text-white bg-brand-blue-1 hover:shadow-blue;
+}
+.secondary {
+  @apply text-brand-blue-1 bg-transparent hover:bg-brand-blue-2 hover:text-white;
 }
 </style>
