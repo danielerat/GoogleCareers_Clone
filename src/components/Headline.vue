@@ -1,6 +1,9 @@
 <template>
-  <section>
-    <h1 class="font-bold tracking-tighter text-8xl mb-14">
+  <section class="mb-16">
+    <h1
+      class="font-bold tracking-tighter text-8xl mb-14"
+      data-test="action-phrase"
+    >
       <span :class="actionClasses">{{ action }}</span>
       <br />
       for everyone
@@ -10,6 +13,7 @@
 </template>
 
 <script>
+import nextElementInList from "@/utils/nextElementInList.js";
 export default {
   name: "Headline",
   data() {
@@ -38,10 +42,8 @@ export default {
       // Create our interval which will be running over and over again
       this.interval = setInterval(() => {
         const actions = ["Build", "Create", "Design", "Code"];
-        const currentActionIndex = actions.indexOf(this.action); //Get the current index of out data action
-        const nextActionIndex = (currentActionIndex + 1) % 4; //Get the value that is always next
-        const nextAction = actions[nextActionIndex];
-        this.action = nextAction;
+
+        this.action = nextElementInList(actions, "Build");
       }, 3000);
     },
   },
