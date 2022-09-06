@@ -1,6 +1,10 @@
 <template>
   <section>
-    <h1>{{ action }} for everyone</h1>
+    <h1>
+      <span :class="actionClasses">{{ action }}</span>
+      <br />
+      for everyone
+    </h1>
     <h3>Find your next job at Careers Junkies</h3>
   </section>
 </template>
@@ -14,6 +18,16 @@ export default {
       interval: null,
     };
   },
+  computed: {
+    actionClasses() {
+      return {
+        build: this.action === "Build",
+        create: this.action === "Create",
+        design: this.action === "Design",
+        code: this.action === "Code",
+      };
+    },
+  },
   created() {
     //As soon as the page loads
     this.changeTitle();
@@ -26,7 +40,7 @@ export default {
     changeTitle() {
       // Create our interval which will be running over and over again
       this.interval = setInterval(() => {
-        const actions = ["Build", "Created", "Design", "Code"];
+        const actions = ["Build", "Create", "Design", "Code"];
         const currentActionIndex = actions.indexOf(this.action); //Get the current index of out data action
         const nextActionIndex = (currentActionIndex + 1) % 4; //Get the value that is always next
         const nextAction = actions[nextActionIndex];
@@ -36,3 +50,17 @@ export default {
   },
 };
 </script>
+<style scoped>
+.build {
+  color: #1a73e8;
+}
+.create {
+  color: #34a853;
+}
+.design {
+  color: #f9ab00;
+}
+.code {
+  color: #d93025;
+}
+</style>
