@@ -9,22 +9,14 @@
     <div class="flex flex-nowrap flex-1 h-full border">
       <div class="relative flex items-center felx-1 h-full pr-3">
         <label class="absolute left-0 -top-10 text-">Role</label>
-        <text-input
-          placeholder="Software Engineer"
-          :value="role"
-          @handleInput="upateRole"
-        />
+        <text-input v-model="role" placeholder="Software Engineer" />
       </div>
       <span class="flex items-center h-full px-3 border bg-brand-gray-2">
         IN
       </span>
       <div class="relative flex items-center felx-1 h-full">
         <label class="absolute left-0 -top-10">Where?</label>
-        <text-input
-          placeholder="Rwanda Kigali"
-          :value="location"
-          @handleInput="updateLocation"
-        />
+        <text-input v-model="location" placeholder="Rwanda Kigali" />
         <action-button class="rounded-r-3xl" type="secondary" text="Search" />
       </div>
     </div>
