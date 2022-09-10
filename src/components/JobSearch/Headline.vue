@@ -42,8 +42,8 @@ export default {
       // Create our interval which will be running over and over again
       this.interval = setInterval(() => {
         const actions = ["Build", "Create", "Design", "Code"];
-
-        this.action = nextElementInList(actions, "Build");
+        this.action = nextElementInList(actions, this.action);
+        console.log(this.action);
       }, 3000);
     },
   },

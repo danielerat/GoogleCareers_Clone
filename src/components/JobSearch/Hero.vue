@@ -8,10 +8,7 @@
           <job-search-form />
         </div>
         <div class="col-span-5 self-center justify-self-center">
-          <img
-            class="w-100 h-80 object-contain"
-            src="https://careers.google.com/jobs/dist/img/assets/hero-04_1x.5377e160fa426c8b388a861f23cc185b.png"
-          />
+          <image-swiper />
         </div>
         <div class="col-span-1"></div>
       </div>
@@ -21,10 +18,12 @@
 <script>
 import Headline from "@/components/JobSearch/Headline";
 import JobSearchForm from "@/components/JobSearch/JobSearchForm.vue";
+import ImageSwiper from "@/components/JobSearch/ImageSwiper.vue";
 export default {
   name: "Hero",
   components: {
     Headline,
+    ImageSwiper,
     JobSearchForm,
   },
 };
