@@ -1,14 +1,26 @@
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, RouterLinkStub } from "@vue/test-utils";
 
 import MainNav from "@/components/Navigation/MainNav.vue";
 describe("MainNav", () => {
   it("It Displays company Name", () => {
-    const wrapper = shallowMount(MainNav);
+    const wrapper = shallowMount(MainNav, {
+      global: {
+        stubs: {
+          "router-link": RouterLinkStub,
+        },
+      },
+    });
     expect(wrapper.text()).toMatch("Careers Junkie");
   });
 
   it("Displays meny items for navigation", () => {
-    const wrapper = shallowMount(MainNav);
+    const wrapper = shallowMount(MainNav, {
+      global: {
+        stubs: {
+          "router-link": RouterLinkStub,
+        },
+      },
+    });
     const navigationMenuItems = wrapper.findAll(
       "[data-test='main-nav-list-item']"
     );
@@ -27,7 +39,13 @@ describe("MainNav", () => {
 
   describe("When the user is logged out", () => {
     it("Prompts user to sign in", () => {
-      const wrapper = shallowMount(MainNav);
+      const wrapper = shallowMount(MainNav, {
+        global: {
+          stubs: {
+            "router-link": RouterLinkStub,
+          },
+        },
+      });
       const loginButton = wrapper.find("[data-test='login-button']");
       expect(loginButton.exists()).toBe(true);
     });
@@ -35,7 +53,13 @@ describe("MainNav", () => {
 
   describe("When the user is logged in", () => {
     it("Display User Profile image", async () => {
-      const wrapper = shallowMount(MainNav);
+      const wrapper = shallowMount(MainNav, {
+        global: {
+          stubs: {
+            "router-link": RouterLinkStub,
+          },
+        },
+      });
       let profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(false);
 
@@ -46,7 +70,13 @@ describe("MainNav", () => {
     });
 
     it("Displays subnavigation with addditional information", async () => {
-      const wrapper = shallowMount(MainNav);
+      const wrapper = shallowMount(MainNav, {
+        global: {
+          stubs: {
+            "router-link": RouterLinkStub,
+          },
+        },
+      });
       let subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(false);
 

@@ -4,9 +4,12 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a :href="url" class="flex items-center px-4 h-full text-xl">
-          {{ company }}
-        </a>
+        <router-link
+          :to="{ name: 'home' }"
+          class="flex items-center px-4 h-full text-xl"
+        >
+          Careers Junkie
+        </router-link>
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0">
             <li
@@ -49,9 +52,6 @@ export default {
   },
   data() {
     return {
-      company: "Careers Junkie",
-      author: { firstName: "Ilunga", lastName: "Gisa Daniel" },
-      url: "#",
       menuItems: [
         "Team",
         "Locations",
