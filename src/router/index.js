@@ -1,7 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "@/views/HomeView.vue";
-import JobsResultVue from "@/views/JobsResultVue.vue";
-import JobView from "@/views/JobView.vue";
+
+const HomeView = () => import("@/views/HomeView.vue");
+const JobsResultVue = () =>
+  import(/* webpackChunkName: "jobs"*/ "@/views/JobsResultVue.vue");
+const JobView = () =>
+  import(/* webpackChunkName: "jobs"*/ "@/views/JobView.vue");
+
 const routes = [
   {
     path: "/",
