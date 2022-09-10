@@ -38,13 +38,5 @@ export default {
       location: "",
     };
   },
-  methods: {
-    upateRole(payload) {
-      this.role = payload;
-    },
-    updateLocation(payload) {
-      this.location = payload;
-    },
-  },
 };
 </script>

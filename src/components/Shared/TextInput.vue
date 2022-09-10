@@ -22,7 +22,7 @@ export default {
       type: String,
     },
   },
-
+  emits: ["update:modelValue"],
   methods: {
     handleInput($event) {
       this.$emit("update:modelValue", $event.target.value);
