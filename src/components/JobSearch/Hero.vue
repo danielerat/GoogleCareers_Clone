@@ -9,7 +9,7 @@
         </div>
         <div class="col-span-5 self-center justify-self-center">
           <img
-            class="w-100 h-80 object-contain border"
+            class="w-100 h-80 object-contain"
             src="https://careers.google.com/jobs/dist/img/assets/hero-04_1x.5377e160fa426c8b388a861f23cc185b.png"
           />
         </div>

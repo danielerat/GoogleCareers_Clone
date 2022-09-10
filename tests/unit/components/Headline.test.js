@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 
-import Headline from "@/components/Headline.vue";
+import Headline from "@/components/JosSearch/Headline.vue";
 
 describe("Headline", () => {
   it("Displays Introductory action Verb", () => {
