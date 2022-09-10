@@ -17,17 +17,15 @@ export default {
       type: String,
       default: "",
     },
-  },
-  data() {
-    return {
-      value: "",
-    };
+    value: {
+      required: true,
+      type: String,
+    },
   },
 
   methods: {
     handleInput($event) {
-      this.value = $event.target.value;
-      this.$emit("handleInput", this.value);
+      this.$emit("handleInput", $event.target.value);
     },
   },
 };
