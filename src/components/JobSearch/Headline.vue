@@ -43,7 +43,6 @@ export default {
       this.interval = setInterval(() => {
         const actions = ["Build", "Create", "Design", "Code"];
         this.action = nextElementInList(actions, this.action);
-        console.log(this.action);
       }, 3000);
     },
   },
