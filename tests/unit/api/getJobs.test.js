@@ -1,6 +1,6 @@
 import axios from "axios";
 jest.mock("axios");
-import getJobs from "@/api/getJos";
+import getJobs from "@/api/getJobs";
 
 describe("Get Jobs", () => {
   beforeEach(() => {
