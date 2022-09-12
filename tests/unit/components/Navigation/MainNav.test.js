@@ -47,32 +47,32 @@ describe("MainNav", () => {
     });
   });
 
-  describe("When the user is logged in", () => {
-    it("Display User Profile image", async () => {
-      const store = createStore();
-      const wrapper = shallowMount(MainNav, createConfig(store));
+  // describe("When the user is logged in", () => {
+  //   it("Display User Profile image", async () => {
+  //     const store = createStore();
+  //     const wrapper = shallowMount(MainNav, createConfig(store));
 
-      let profileImage = wrapper.find("[data-test='profile-image']");
-      expect(profileImage.exists()).toBe(false);
+  //     let profileImage = wrapper.find("[data-test='profile-image']");
+  //     expect(profileImage.exists()).toBe(false);
 
-      const loginButton = wrapper.find("[data-test='login-button']");
-      await loginButton.trigger("click");
-      profileImage = wrapper.find("[data-test='profile-image']");
-      expect(profileImage.exists()).toBe(true);
-    });
+  //     const loginButton = wrapper.find("[data-test='login-button']");
+  //     await loginButton.trigger("click");
+  //     profileImage = wrapper.find("[data-test='profile-image']");
+  //     expect(profileImage.exists()).toBe(true);
+  //   });
 
-    it("Displays subnavigation with addditional information", async () => {
-      const store = createStore();
-      const wrapper = shallowMount(MainNav, createConfig(store));
+  //   it("Displays subnavigation with addditional information", async () => {
+  //     const store = createStore();
+  //     const wrapper = shallowMount(MainNav, createConfig(store));
 
-      let subnav = wrapper.find("[data-test='subnav']");
-      expect(subnav.exists()).toBe(false);
+  //     let subnav = wrapper.find("[data-test='subnav']");
+  //     expect(subnav.exists()).toBe(false);
 
-      const loginButton = wrapper.find("[data-test='login-button']");
-      await loginButton.trigger("click");
+  //     const loginButton = wrapper.find("[data-test='login-button']");
+  //     await loginButton.trigger("click");
 
-      subnav = wrapper.find("[data-test='subnav']");
-      expect(subnav.exists()).toBe(true);
-    });
-  });
+  //     subnav = wrapper.find("[data-test='subnav']");
+  //     expect(subnav.exists()).toBe(true);
+  //   });
+  // });
 });
