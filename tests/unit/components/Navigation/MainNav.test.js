@@ -1,22 +1,26 @@
 import { shallowMount, RouterLinkStub } from "@vue/test-utils";
-
+import { createStore } from "vuex";
 import MainNav from "@/components/Navigation/MainNav.vue";
 describe("MainNav", () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallowMount(MainNav, {
-      global: {
-        stubs: {
-          "router-link": RouterLinkStub,
-        },
+  const createConfig = (store) => ({
+    global: {
+      plugins: [store],
+      stubs: {
+        "router-link": RouterLinkStub,
       },
-    });
+    },
   });
+
   it("It Displays company Name", () => {
+    const store = createStore();
+    const wrapper = shallowMount(MainNav, createConfig(store));
     expect(wrapper.text()).toMatch("Careers Junkie");
   });
 
   it("Displays meny items for navigation", () => {
+    const store = createStore();
+    const wrapper = shallowMount(MainNav, createConfig(store));
+
     const navigationMenuItems = wrapper.findAll(
       "[data-test='main-nav-list-item']"
     );
@@ -35,6 +39,9 @@ describe("MainNav", () => {
 
   describe("When the user is logged out", () => {
     it("Prompts user to sign in", () => {
+      const store = createStore();
+      const wrapper = shallowMount(MainNav, createConfig(store));
+
       const loginButton = wrapper.find("[data-test='login-button']");
       expect(loginButton.exists()).toBe(true);
     });
@@ -42,6 +49,9 @@ describe("MainNav", () => {
 
   describe("When the user is logged in", () => {
     it("Display User Profile image", async () => {
+      const store = createStore();
+      const wrapper = shallowMount(MainNav, createConfig(store));
+
       let profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(false);
 
@@ -52,6 +62,9 @@ describe("MainNav", () => {
     });
 
     it("Displays subnavigation with addditional information", async () => {
+      const store = createStore();
+      const wrapper = shallowMount(MainNav, createConfig(store));
+
       let subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(false);
 
