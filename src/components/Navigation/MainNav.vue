@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { text: "Team", url: "/" },
+        { text: "Team", url: "/teams" },
         { text: "Locations", url: "/" },
         { text: "Life at Junkies", url: "/" },
         { text: "How we hire", url: "/" },

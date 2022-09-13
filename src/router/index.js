@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const HomeView = () => import("@/views/HomeView.vue");
+const TeamsView = () => import("@/views/TeamsView.vue");
 const JobsResultVue = () =>
   import(/* webpackChunkName: "jobs"*/ "@/views/JobsResultVue.vue");
 const JobView = () =>
@@ -11,6 +12,11 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/teams",
+    name: "TeamsView",
+    component: TeamsView,
   },
   {
     path: "/jobs/results",
