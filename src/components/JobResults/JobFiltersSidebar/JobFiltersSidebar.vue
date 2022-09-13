@@ -8,20 +8,26 @@
           <action-button text="Clear Filter" type="secondary" />
         </div>
       </div>
-      <accordion>
-        <action-button text="Clear Filter" type="secondary" />
+
+      <accordion header="Jobs Type"></accordion>
+      <accordion header="Jobs Type">
+        <p>Thi sis some place holder you know</p>
       </accordion>
+
+      <job-filters-sidebar-organizations />
     </section>
   </div>
 </template>
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import Accordion from "@/components/Shared/Accordion.vue";
+import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations";
 export default {
   name: "JobFiltersSidebar",
   components: {
     ActionButton,
     Accordion,
+    JobFiltersSidebarOrganizations,
   },
 };
 </script>
