@@ -7,7 +7,7 @@
       :icon="['fas', 'search']"
       class="ml-3 mr-3 text-2xl text-brand-gray-3"
     />
-    <div class="flex flex-nowrap flex-1 h-full border">
+    <div class="flex flex-nowrap flex-1 h-full">
       <div class="relative flex items-center felx-1 h-full pr-3">
         <label class="absolute left-0 -top-10 text-">Role</label>
         <text-input v-model="role" placeholder="Software Engineer" />
