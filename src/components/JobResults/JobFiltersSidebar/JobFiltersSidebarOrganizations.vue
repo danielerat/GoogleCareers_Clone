@@ -25,7 +25,10 @@
 </template>
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import { UNIQUE_ORGANIZATIONS, SELECTED_ORGANIZATIONS } from "@/store";
+import {
+  UNIQUE_ORGANIZATIONS,
+  ADD_SELECTED_ORGANIZATIONS,
+} from "@/store/constants";
 
 import Accordion from "@/components/Shared/Accordion.vue";
 export default {
@@ -43,9 +46,9 @@ export default {
   },
   methods: {
     selectOrganization() {
-      this.SELECTED_ORGANIZATIONS(this.selectedOrganizations);
+      this.ADD_SELECTED_ORGANIZATIONS(this.selectedOrganizations);
     },
-    ...mapMutations([SELECTED_ORGANIZATIONS]),
+    ...mapMutations([ADD_SELECTED_ORGANIZATIONS]),
   },
 };
 </script>
