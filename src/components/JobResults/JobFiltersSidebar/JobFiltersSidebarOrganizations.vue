@@ -14,6 +14,7 @@
               :value="organization"
               type="checkbox"
               class="mr-1"
+              @change="selectOrganization"
             />
             <label :for="organization" class="">{{ organization }}</label>
           </li>
@@ -23,8 +24,9 @@
   </accordion>
 </template>
 <script>
-import { mapGetters } from "vuex";
-import { UNIQUE_ORGANIZATIONS } from "@/store";
+import { mapGetters, mapMutations } from "vuex";
+import { UNIQUE_ORGANIZATIONS, SELECTED_ORGANIZATIONS } from "@/store";
+
 import Accordion from "@/components/Shared/Accordion.vue";
 export default {
   name: "JobFiltersSidebarOrganizations",
@@ -38,6 +40,12 @@ export default {
   },
   computed: {
     ...mapGetters([UNIQUE_ORGANIZATIONS]),
+  },
+  methods: {
+    selectOrganization() {
+      this.SELECTED_ORGANIZATIONS(this.selectedOrganizations);
+    },
+    ...mapMutations([SELECTED_ORGANIZATIONS]),
   },
 };
 </script>
