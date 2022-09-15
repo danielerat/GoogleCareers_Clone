@@ -9,25 +9,22 @@
         </div>
       </div>
 
-      <accordion header="Jobs Type"></accordion>
-      <accordion header="Jobs Type">
-        <p>Thi sis some place holder you know</p>
-      </accordion>
-
+      <job-filters-sidebar-job-type />
       <job-filters-sidebar-organizations />
     </section>
   </div>
 </template>
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import Accordion from "@/components/Shared/Accordion.vue";
+
 import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations";
+import JobFiltersSidebarJobType from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarJobType";
 export default {
   name: "JobFiltersSidebar",
   components: {
     ActionButton,
-    Accordion,
     JobFiltersSidebarOrganizations,
+    JobFiltersSidebarJobType,
   },
 };
 </script>
