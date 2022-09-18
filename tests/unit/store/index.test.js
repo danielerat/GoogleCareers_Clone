@@ -1,5 +1,5 @@
-import { state } from "@/store";
-import { mutations } from "@/store";
+import { state } from "@/store/state";
+import { mutations } from "@/store/mutations";
 
 describe("State", () => {
   it("Keeps track of whether use is logged in", () => {
