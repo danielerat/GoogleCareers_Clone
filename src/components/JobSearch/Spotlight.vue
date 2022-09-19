@@ -10,20 +10,20 @@
   </ul>
 </template>
 <script>
+import { ref, onMounted } from "vue";
 import axios from "axios";
 export default {
   name: "Spotlight",
-  data() {
-    return {
-      spotlights: [],
+  setup() {
+    const spotlights = ref([]);
+    const getSpotlights = async () => {
+      const baseurl = process.env.VUE_APP_API_URL;
+      const url = `${baseurl}/spotlights`;
+      const response = await axios.get(url);
+      spotlights.value = response.data;
     };
-  },
-
-  async mounted() {
-    const baseurl = process.env.VUE_APP_API_URL;
-    const url = `${baseurl}/spotlights`;
-    const result = await axios.get(url);
-    this.spotlights = result.data;
+    onMounted(getSpotlights);
+    return { spotlights };
   },
 };
 </script>
