@@ -29,11 +29,10 @@
 <script>
 import { onMounted, computed } from "vue";
 import { useStore } from "vuex";
-import { useRoute } from "vue-router";
 import { FETCH_JOBS } from "@/store/constants";
-
 import JobListing from "@/components/JobResults/JobListing.vue";
 import { useFilteredJobs } from "@/store/composable";
+import useCurrentPage from "@/composables/useCurrentPage";
 export default {
   name: "JobListings",
   components: {
@@ -41,7 +40,6 @@ export default {
   },
   setup() {
     const store = useStore();
-    const route = useRoute();
     const fetchJobs = () => {
       //Fetch our jobs from or api in our action
       store.dispatch(FETCH_JOBS);
@@ -49,7 +47,7 @@ export default {
     onMounted(fetchJobs);
     const filteredJobs = useFilteredJobs();
 
-    const currentPage = computed(() => Number.parseInt(route.query.page || 1));
+    const currentPage = useCurrentPage();
 
     const previousPage = computed(() => {
       const previousPage = currentPage.value - 1;

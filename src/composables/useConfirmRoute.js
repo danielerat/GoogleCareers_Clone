@@ -5,3 +5,5 @@ const useConfirmRoute = (routeName) => {
   return computed(() => route.name === routeName);
 };
 export default useConfirmRoute;
+
+// Confirms if we are on a particular Route/page
