@@ -28,10 +28,10 @@
 </template>
 <script>
 import { onMounted, computed } from "vue";
-import { useStore } from "vuex";
-import { FETCH_JOBS } from "@/store/constants";
+// import { useStore } from "vuex";
+// import { FETCH_JOBS } from "@/store/constants";
 import JobListing from "@/components/JobResults/JobListing.vue";
-import { useFilteredJobs } from "@/store/composable";
+import { useFilteredJobs, useFetchJobDispatch } from "@/store/composable";
 import useCurrentPage from "@/composables/useCurrentPage";
 import usePreviousAndNextPage from "@/composables/usePreviousAndNextPages";
 export default {
@@ -40,12 +40,7 @@ export default {
     JobListing,
   },
   setup() {
-    const store = useStore();
-    const fetchJobs = () => {
-      //Fetch our jobs from or api in our action
-      store.dispatch(FETCH_JOBS);
-    };
-    onMounted(fetchJobs);
+    onMounted(useFetchJobDispatch);
     const filteredJobs = useFilteredJobs();
 
     const currentPage = useCurrentPage();
