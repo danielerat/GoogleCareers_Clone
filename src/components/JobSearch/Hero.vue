@@ -5,6 +5,7 @@
         <div class="col-span-1"></div>
         <div class="col-span-5">
           <headline />
+
           <job-search-form />
         </div>
         <div class="col-span-5 self-center justify-self-center">

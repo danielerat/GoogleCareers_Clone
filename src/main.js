@@ -11,6 +11,7 @@ import App from "@/App.vue";
 import "@/assets/tailwind.css";
 import router from "@/router";
 import store from "@/store";
+import "animate.css";
 
 library.add(faAngleDown);
 library.add(faAngleUp);

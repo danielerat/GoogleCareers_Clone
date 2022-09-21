@@ -5,10 +5,13 @@
       data-test="action-phrase"
     >
       <span :class="actionClasses">{{ action }}</span>
+
       <br />
-      for everyone
+
+      <span v-if="showWord">for everyone</span>
     </h1>
     <h3 class="text-3xl font-light">Find your next job at Careers Junkies</h3>
+    <button @click="showWord = !showWord">Click</button>
   </section>
 </template>
 
@@ -20,6 +23,7 @@ export default {
     return {
       action: "Build",
       interval: null,
+      showWord: true,
     };
   },
   computed: {
